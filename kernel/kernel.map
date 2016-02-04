@@ -1,0 +1,131 @@
+Archive member included because of file (symbol)
+
+../lib/libbwio.a(bwio.o)      kernel.o (bwsetfifo)
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+                              ../lib/libbwio.a(bwio.o) (__udivsi3)
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+                              ../lib/libbwio.a(bwio.o) (__umodsi3)
+/u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+                              /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o) (__div0)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x0000000000000000 0x0000000002000000
+rom              0x0000000060000000 0x0000000000800000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+data            0x0000000000000000        0x0
+                0x0000000000000000                _DataStart = .
+ *(.data)
+                0x0000000000000000                _DataEnd = .
+
+bss             0x0000000000000000        0x0
+                0x0000000000000000                _BssStart = .
+ *(.bss)
+                0x0000000000000000                _BssEnd = .
+
+text            0x0000000000000000     0x3f48
+ *(.text)
+ .text          0x0000000000000000     0x2c4c kernel.o
+                0x0000000000000434                Send
+                0x0000000000000000                myMemCpy
+                0x0000000000000248                reverse
+                0x00000000000011a8                player
+                0x0000000000000634                MyParentTid
+                0x0000000000000664                Pass
+                0x0000000000001f88                memcpy
+                0x000000000000076c                WhoIs
+                0x00000000000005a8                Create
+                0x0000000000001624                schedule
+                0x00000000000004c8                Receive
+                0x0000000000000538                Reply
+                0x0000000000000604                MyTid
+                0x0000000000000ab0                server
+                0x00000000000001c8                myStrcmp
+                0x0000000000001adc                activate
+                0x0000000000000680                Exit
+                0x0000000000001db0                handle
+                0x0000000000000830                nameServer
+                0x0000000000000300                myItoa
+                0x0000000000002818                main
+                0x0000000000000084                myAtoi
+                0x0000000000001a38                getTaskDes
+                0x000000000000069c                RegisterAs
+                0x00000000000014cc                first
+                0x0000000000002014                handle_msg_passing
+                0x0000000000001c38                initialize
+                0x00000000000018d0                pq_delete
+                0x00000000000016e0                pq_insert
+                0x00000000000017c8                pq_movetoend
+ .text          0x0000000000002c4c      0xc54 ../lib/libbwio.a(bwio.o)
+                0x0000000000002fc4                bwputr
+                0x0000000000003530                bwi2a
+                0x0000000000002c4c                bwsetfifo
+                0x0000000000002e20                bwputc
+                0x0000000000003280                bwa2d
+                0x0000000000002d14                bwsetspeed
+                0x0000000000002ee4                c2x
+                0x0000000000003328                bwa2i
+                0x00000000000031c8                bwgetc
+                0x00000000000033ec                bwui2a
+                0x0000000000003594                bwformat
+                0x00000000000030c0                bwputw
+                0x0000000000003868                bwprintf
+                0x0000000000002f44                bwputx
+                0x0000000000003044                bwputstr
+ .text          0x00000000000038a0      0x110 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+                0x00000000000038a0                __udivsi3
+                0x0000000000003998                __aeabi_uidivmod
+ .text          0x00000000000039b0       0xcc /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+                0x00000000000039b0                __umodsi3
+ .text          0x0000000000003a7c        0x4 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+                0x0000000000003a7c                __aeabi_ldiv0
+                0x0000000000003a7c                __div0
+                0x0000000000003a7c                __aeabi_idiv0
+ *(.got)
+ .got           0x0000000000003a80       0x10 kernel.o
+ *(.got.plt)
+ .got.plt       0x0000000000003a90        0xc kernel.o
+                0x0000000000003a90                _GLOBAL_OFFSET_TABLE_
+ *(.rodata)
+ .rodata        0x0000000000003a9c      0x4ac kernel.o
+ *(.rodata.str1.4)
+ *(.glue_7)
+ *(.glue_7t)
+
+.rel.dyn
+LOAD kernel.o
+LOAD ../lib/libbwio.a
+LOAD /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a
+OUTPUT(kernel.elf elf32-littlearm)
+
+.comment        0x0000000000000000       0x24
+ .comment       0x0000000000000000       0x12 kernel.o
+ .comment       0x0000000000000012       0x12 ../lib/libbwio.a(bwio.o)
+
+.debug_line     0x0000000000000000      0x14f
+ .debug_line    0x0000000000000000       0x86 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000000000000086       0x6f /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_line    0x00000000000000f5       0x5a /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+
+.debug_info     0x0000000000000000      0x153
+ .debug_info    0x0000000000000000       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_info    0x0000000000000071       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_info    0x00000000000000e2       0x71 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+
+.debug_abbrev   0x0000000000000000       0x3c
+ .debug_abbrev  0x0000000000000000       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000000000000014       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x0000000000000028       0x14 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
+
+.debug_aranges  0x0000000000000000       0x60
+ .debug_aranges
+                0x0000000000000000       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x0000000000000020       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_umodsi3.o)
+ .debug_aranges
+                0x0000000000000040       0x20 /u/wbcowan/gnuarm-4.0.2/lib/gcc/arm-elf/4.0.2/libgcc.a(_dvmd_tls.o)
